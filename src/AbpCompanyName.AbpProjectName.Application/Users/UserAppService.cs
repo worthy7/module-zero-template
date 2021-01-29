@@ -17,6 +17,9 @@ using Microsoft.AspNet.Identity;
 
 namespace AbpCompanyName.AbpProjectName.Users
 {
+    /// <summary>
+    /// Manage Users
+    /// </summary>
     [AbpAuthorize(PermissionNames.Pages_Users)]
     public class UserAppService : AsyncCrudAppService<User, UserDto, long, PagedResultRequestDto, CreateUserDto, UpdateUserDto>, IUserAppService
     {
@@ -93,6 +96,9 @@ namespace AbpCompanyName.AbpProjectName.Users
             await _userManager.DeleteAsync(user);
         }
 
+        /// <summary>
+        /// Get the roles
+        /// </summary>
         public async Task<ListResultDto<RoleDto>> GetRoles()
         {
             var roles = await _roleRepository.GetAllListAsync();
