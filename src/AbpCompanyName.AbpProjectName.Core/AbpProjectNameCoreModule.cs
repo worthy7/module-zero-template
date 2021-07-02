@@ -10,6 +10,7 @@ using AbpCompanyName.AbpProjectName.Authorization.Users;
 using AbpCompanyName.AbpProjectName.Configuration;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
 using AbpCompanyName.AbpProjectName.Something;
+using Castle.MicroKernel.Registration;
 
 namespace AbpCompanyName.AbpProjectName
 {
@@ -45,7 +46,7 @@ namespace AbpCompanyName.AbpProjectName
 
             Configuration.Settings.Providers.Add<AppSettingProvider>();
 
-            Configuration.IocManager.Register<ISomething, RealSomething>();
+            Configuration.IocManager.IocContainer.Register(Component.For<ISomething>().ImplementedBy<RealSomething>().IsFallback());
         }
 
         public override void Initialize()
