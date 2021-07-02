@@ -9,6 +9,7 @@ using AbpCompanyName.AbpProjectName.Authorization.Roles;
 using AbpCompanyName.AbpProjectName.Authorization.Users;
 using AbpCompanyName.AbpProjectName.Configuration;
 using AbpCompanyName.AbpProjectName.MultiTenancy;
+using AbpCompanyName.AbpProjectName.Something;
 
 namespace AbpCompanyName.AbpProjectName
 {
@@ -43,6 +44,8 @@ namespace AbpCompanyName.AbpProjectName
             Configuration.Authorization.Providers.Add<AbpProjectNameAuthorizationProvider>();
 
             Configuration.Settings.Providers.Add<AppSettingProvider>();
+
+            Configuration.IocManager.Register<ISomething, RealSomething>();
         }
 
         public override void Initialize()

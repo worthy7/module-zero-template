@@ -2,8 +2,10 @@
 using Abp.MultiTenancy;
 using Abp.TestBase;
 using Abp.Zero.Configuration;
+using AbpCompanyName.AbpProjectName.Something;
 using Castle.MicroKernel.Registration;
 using NSubstitute;
+using Abp.Configuration.Startup;
 
 namespace AbpCompanyName.AbpProjectName.Tests
 {
@@ -25,6 +27,13 @@ namespace AbpCompanyName.AbpProjectName.Tests
                     .UsingFactoryMethod(() => Substitute.For<IAbpZeroDbMigrator>())
                     .LifestyleSingleton()
                 );
+
+        }
+
+        public override void PostInitialize()
+        {
+            base.PostInitialize();
+            Configuration.ReplaceService<ISomething, MockSomething>();
         }
     }
 }

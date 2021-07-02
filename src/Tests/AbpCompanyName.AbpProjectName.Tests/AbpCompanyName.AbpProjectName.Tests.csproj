@@ -288,6 +288,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbpProjectNameTestModule.cs" />
+    <Compile Include="DependencyInjectionTests.cs" />
     <Compile Include="MultiTenantFactAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sessions\SessionAppService_Tests.cs" />

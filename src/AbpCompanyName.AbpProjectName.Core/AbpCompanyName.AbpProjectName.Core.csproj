@@ -234,6 +234,9 @@
     <Compile Include="Authorization\Users\User.cs" />
     <Compile Include="Authorization\Users\UserManager.cs" />
     <Compile Include="Authorization\Users\UserStore.cs" />
+    <Compile Include="Something\ISomething.cs" />
+    <Compile Include="Something\RealSomething.cs" />
+    <Compile Include="Something\MockSomething.cs" />
     <Compile Include="Validation\ValidationHelper.cs" />
   </ItemGroup>
   <ItemGroup>
